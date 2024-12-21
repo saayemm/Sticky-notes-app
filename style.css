@@ -23,7 +23,7 @@ body{
     padding: 3rem;
 }
 
-.note-files{
+.notes-files{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -126,10 +126,39 @@ body{
     color: black;
     text-align: center;
     padding: 16px 12px;
+    position: relative;
 }
-.note text{
+.note-text{
     text-align: left;
     color: black;
+    outline: none;
+    border: 1px solid black;
+    padding: 8px;
+    position: relative;
+    height: 100%;
+    border-radius: 8px;
+}
+.title:focus{
+   outline: .1rem solid var(--primary-color);
+}
+.note-text:focus{
+    outline:.1rem solid var(--primary-color);
+}
+
+.title::before, .note-text::before{
+    content: "Edit Mode";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    background-color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    visibility: hidden;
+}
+
+.title:focus:after, .note-text:focus:after{
+    visibility: visible;
 }
 
 .setting{
