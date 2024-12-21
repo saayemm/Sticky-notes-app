@@ -127,6 +127,11 @@ body{
     text-align: center;
     padding: 16px 12px;
     position: relative;
+    overflow-y: auto;
+
+}
+.title::-webkit-scrollbar, .note-text::-webkit-scrollbar{
+    width: auto;
 }
 .note-text{
     text-align: left;
@@ -137,6 +142,8 @@ body{
     position: relative;
     height: 100%;
     border-radius: 8px;
+    overflow-y: auto;
+    background-color: rgb(228, 228, 162);
 }
 .title:focus{
    outline: .1rem solid var(--primary-color);
@@ -155,10 +162,13 @@ body{
     padding: 4px 8px;
     border-radius: 8px;
     visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
 }
 
-.title:focus:after, .note-text:focus:after{
+.title:focus::before, .note-text:focus::before{
     visibility: visible;
+    opacity: 1;
 }
 
 .setting{
